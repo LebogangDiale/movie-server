@@ -116,32 +116,16 @@ router.post('/login', (req, res, next) => {
 });     
 
 
-//Delete user
-router.patch('/deleteAccount/:email', (req, res, next) => {
-    debugger;
+//Delete account
+router.patch('/deleteAccount', (req, res, next) => {
     return new Promise((resolve, reject) => {
-        let placeholder = '';
-        let count = 1;
-        const params = Object.keys(req.params).map(key => [(key), req.params[key]]);
 
-        const paramsvalues = Object.keys(req.params).map(key => req.params[key]);
+        let user = "'"+req.body.email_address+"'";
 
-        if (Array.isArray(params)) {
-            params.forEach(() => {
-                placeholder += `$${count},`;
-                count += 1;
-            });
-        } 
+        const deleteFN = `moviespot_schema.fn_delete_account(${user})`;
 
-        placeholder = placeholder.replace(/,\s*$/, ''); 
-
-        const functionName = `moviespot_schema.fn_delete_account`;
-
-        const sql = `${functionName}(${placeholder})`;
-
-        postgres.callFnWithResultsAdd(sql, paramsvalues)
+        postgres.callFnWithResultsAdd(deleteFN)
         .then((data) => {
-            debugger;
             console.log(data);
    
             res.status(201).json({
@@ -152,7 +136,7 @@ router.patch('/deleteAccount/:email', (req, res, next) => {
 
         })
         .catch((error) => {
-            debugger;
+
             console.log(error);
             res.status(500).json({
                 message: 'bad Request',
