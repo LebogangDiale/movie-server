@@ -4,7 +4,7 @@ const {
 } = require('pg');
 
 //const connection_string = "postgres://admin:12345678@localhost:5432/movies_spot";
-const connection_string = "postgres://ddeghzzreoaqxm:4875b5559cab7ddb751ba3521f9f4be3cd50c4ed1b862a5961f20279b1dc152e@ec2-54-208-139-247.compute-1.amazonaws.com:5432/da179abtdmjkad";
+const connection_string = "postgres://apccbzqixfsacd:6b6c1e2649f9fe740a08963b71507ede0a37b6397e7b3e2967f81c5e56526f82@ec2-3-210-12-0.compute-1.amazonaws.com:5432/d1hhm2rdmu0f98";
 
 module.exports = class Database {
     constructor() {
