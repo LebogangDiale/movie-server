@@ -88,7 +88,7 @@ router.post('/login', (req, res, next) => {
             console.log(data);
             let loggedIn = data.data[0].fn_user_logintest;
 
-            if(loggeIn){
+            if(loggedIn){
                 res.status(201).json({
                     message: 'User logged in',
                     addedUser: data
