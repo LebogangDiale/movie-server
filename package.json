@@ -1,0 +1,36 @@
+{
+  "name": "movie-server",
+  "version": "1.0.0",
+  "description": "movie server hosted on heroku",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LebogangDiale/movie-server.git"
+  },
+  "keywords": [
+    "server",
+    "restful",
+    "apis",
+    "node",
+    "js"
+  ],
+  "author": "Lebogang Diale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LebogangDiale/movie-server/issues"
+  },
+  "homepage": "https://github.com/LebogangDiale/movie-server#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
